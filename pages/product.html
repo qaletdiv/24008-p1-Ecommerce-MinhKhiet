@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Store - Products</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Css/style.css" />
+    <link rel="stylesheet" href="/Css/product.css" />
+  </head>
+  <body>
+    <!--navbar-->
+    <nav class="navbar bg">
+      <ul class="links-container">
+        <li class="link-item"><a href="/pages/index.html" class="link">Home</a></li>
+        <li class="link-item"><a href="/pages/product.html" class="link active">Products</a></li>
+        <li class="link-item"><a href="#" class="link">About</a></li>
+        <li class="link-item"><a href="#" class="link">Contact</a></li>
+      </ul>
+      <div class="user-interactions">
+        <div class="search-box">
+          <input type="text" class="search" placeholder="search item" />
+          <button class="search-btn">
+            <img src="/img/search.png" alt="" />
+          </button>
+        </div>
+        <div class="cart" id="cart-icon">
+          <img src="/img/cart.png" class="cart-icon" alt="" />
+          <span class="cart-item-count">00</span>
+        </div>
+        <div class="user">
+          <img src="/img/user.png" class="user-icon" alt="" />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Product Listing Section -->
+    <div id="product-listing" style="display: none;">
+      <div class="products-container">
+        <div class="filters-section">
+          <div class="category-filter">
+            <select id="categorySelect">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+          <div class="price-filter">
+            <label>Price Range:</label>
+            <input type="range" id="priceRange" min="0" max="50000000" step="1000000" />
+            <span id="priceValue">$0 - $50,000,000</span>
+          </div>
+          <div class="sort-filter">
+            <select id="sortSelect">
+              <option value="name">Sort by Name</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="products-grid" id="productsGrid">
+          <!-- Products will be loaded here -->
+        </div>
+        
+        <div class="pagination" id="pagination">
+          <!-- Pagination will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <div id="product-detail" style="display: none;">
+      <section class="product-section">
+        <img src="/img/product-image.png" class="product-img" alt="" />
+        <div class="product-detail">
+          <h1 class="product-title">Loading...</h1>
+          <p class="product-des">
+            Loading product description...
+          </p>
+          <div class="ratings">
+            <img src="/img/fill star.png" class="star" alt="" />
+            <img src="/img/fill star.png" class="star" alt="" />
+            <img src="/img/fill star.png" class="star" alt="" />
+            <img src="/img/fill star.png" class="star" alt="" />
+            <img src="/img/no fill star.png" class="star" alt="" />
+            <span class="rating-count">0 reviews</span>
+          </div>
+          <p class="price">$0</p>
+          <div class="quantity-selector">
+            <label for="quantity-input">Quantity:</label>
+            <input type="number" id="quantity-input" class="quantity-input" value="1" min="1" max="99">
+          </div>
+          <div class="btn-container">
+            <button class="product-btn buy-btn">Buy Now</button>
+            <button class="product-btn cart-btn">Add to cart</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-des">
+        <h1 class="section-title">details</h1>
+        <p class="des">
+          Loading product details...
+        </p>
+      </section>
+
+      <!-- Similar products section -->
+      <section class="best-selling-product-section">
+        <h1 class="section-title">similar products</h1>
+        <div class="product-container">
+          <!-- Similar products will be loaded here -->
+        </div>
+      </section>
+    </div>
+
+    <footer>made by Minh Khiet</footer>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/mock-data.js"></script> 
+    <script src="/js/home.js" type="module"></script>
+    <script src="/js/product.js" type="module"></script>
+    <script src="/js/main.js" type="module"></script> 
+  </body>
+</html>
