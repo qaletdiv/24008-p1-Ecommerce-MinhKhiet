@@ -2,16 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Store : Dashboard</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lato&display=swap" rel="stylesheet">
+    <title>My Account - Online Store</title>
     <link rel="stylesheet" href="../Css/style.css">
-    <link rel="stylesheet" href="../Css/dashboard.css">
-
+    <link rel="stylesheet" href="../Css/account.css">
 </head>
 <body>
     <nav class="navbar bg">
@@ -42,31 +36,30 @@
         </div>
     </nav>
 
-    <img src="../img/loading.gif" class="loader" alt="">
-
-    <div class="add-product">
-        <p class="text" id="seller-greeting">Hello, </p>
-        <a href="../pages/add-product.html" class="add-product-btn">add product</a>
-    </div>
-
-    <img src="../img/no product.png" class="no-product" alt="">
-
-    <section class="seller-products">
-        <div class="product-container">
-            <div class="product-card">
-                <button class="btn edit-btn"><img src="../img/edit.png" alt=""></button>
-                <button class="btn open-btn"><img src="../img/open.png" alt=""></button>
-                <button class="btn delete-btn"><img src="../img/delete.png" alt=""></button>
-                <img src="../img/product-1.png" class="product-img" alt="">
-                <p class="product-name">lights →</p>
+    <div class="account-container">
+        <div class="account-header">
+            <h1>My Account</h1>
+        </div>
+        
+        <div class="account-content">
+            <div class="account-info-section">
+                <h2>Personal Information</h2>
+                <div id="userInfo">
+                    <!-- User info will be loaded from JavaScript -->
+                </div>
+            </div>
+            
+            <div class="order-history-section">
+                <h2>Order History</h2>
+                <div id="orderHistory">
+                    <!-- Order history will be loaded from JavaScript -->
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <script src="../js/nav.js"></script>
     <script src="../js/mock-data.js"></script>
-    <script src="../js/createProduct.js"></script>
-    <script src="../js/dashboard.js"></script>
-    
+    <script src="../js/account.js"></script>
 </body>
-</html>
+</html> 
