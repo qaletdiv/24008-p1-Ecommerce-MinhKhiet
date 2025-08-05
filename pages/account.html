@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Online Store</title>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/account.css">
+</head>
+<body>
+    <nav class="navbar bg">
+        <ul class="links-container">
+            <li class="link-item"><a href="../pages/index.html" class="link">Home</a></li>
+            <li class="link-item"><a href="../pages/product.html" class="link">Products</a></li>
+            <li class="link-item"><a href="#" class="link">About</a></li>
+            <li class="link-item"><a href="#" class="link">Contact</a></li>
+        </ul>
+        <div class="user-interactions">
+            <div class="search-box">
+                <input type="text" class="search" placeholder="search item" />
+                <button class="search-btn">
+                    <img src="../img/search.png" alt="" />
+                </button>
+            </div>
+            <div class="cart" id="cart-icon">
+                <img src="../img/cart.png" class="cart-icon" alt="" />
+                <span class="cart-item-count">00</span>
+            </div>
+            <div class="user">
+                <img src="../img/user.png" class="user-icon" alt="" />
+                <div class="user-icon-popup">
+                    <p class="popup-text">login to your account</p>
+                    <a class="popup-action-btn">login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="account-container">
+        <div class="account-header">
+            <h1>My Account</h1>
+        </div>
+        
+        <div class="account-content">
+            <div class="account-info-section">
+                <h2>Personal Information</h2>
+                <div id="userInfo">
+                    <!-- User info will be loaded from JavaScript -->
+                </div>
+            </div>
+            
+            <div class="order-history-section">
+                <h2>Order History</h2>
+                <div id="orderHistory">
+                    <!-- Order history will be loaded from JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/mock-data.js"></script>
+    <script src="../js/account.js"></script>
+</body>
+</html> 

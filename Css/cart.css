@@ -1,0 +1,244 @@
+.cart-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #d5be8b;
+}
+
+.cart-title {
+    font-size: 28px;
+    color: #190c05;
+    margin: 0;
+}
+
+#cartItemCount {
+    font-size: 18px;
+    color: #d5be8b;
+    font-weight: bold;
+}
+
+.cart-items {
+    margin-bottom: 30px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    gap: 20px;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #190c05;
+    margin-bottom: 8px;
+}
+
+.cart-item-price {
+    font-size: 16px;
+    color: #d5be8b;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #d5be8b;
+    background: #fff;
+    color: #190c05;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.quantity-btn:hover {
+    background: #d5be8b;
+    color: #fff;
+}
+
+.quantity-input {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #d5be8b;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.cart-item-total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d5be8b;
+    min-width: 100px;
+    text-align: right;
+}
+
+.cart-item-remove {
+    padding: 8px 16px;
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.cart-item-remove:hover {
+    background: #c82333;
+}
+
+.cart-summary {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.cart-summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #190c05;
+}
+
+.cart-summary-total {
+    font-weight: bold;
+    font-size: 20px;
+    color: #d5be8b;
+    border-top: 2px solid #d5be8b;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.cart-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.cart-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cart-btn-primary {
+    background: #d5be8b;
+    color: #fff;
+}
+
+.cart-btn-primary:hover {
+    background: #190c05;
+}
+
+.cart-btn-secondary {
+    background: #666;
+    color: #fff;
+}
+
+.cart-btn-secondary:hover {
+    background: #333;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 50px;
+    color: #666;
+}
+
+.empty-cart h2 {
+    margin-bottom: 20px;
+    color: #190c05;
+    font-size: 24px;
+}
+
+.empty-cart p {
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.continue-shopping {
+    background: #d5be8b;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.continue-shopping:hover {
+    background: #190c05;
+}
+
+@media (max-width: 768px) {
+    .cart-container {
+        padding: 15px;
+    }
+    
+    .cart-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .cart-item-quantity {
+        justify-content: center;
+    }
+    
+    .cart-item-total {
+        text-align: center;
+    }
+    
+    .cart-actions {
+        flex-direction: column;
+    }
+} 

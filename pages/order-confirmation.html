@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác nhận đơn hàng - Online Store</title>
+    <link rel="stylesheet" href="/Css/style.css">
+    <link rel="stylesheet" href="/Css/order-confirmation.css">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Navigation sẽ được load từ nav.js -->
+    </nav>
+
+    <div class="confirmation-container">
+        <div class="confirmation-header">
+            <div class="success-icon">✓</div>
+            <h1>Order Placed Successfully!</h1>
+            <p>Thank you for shopping at Online Store</p>
+        </div>
+        
+        <div class="confirmation-content">
+            <div class="order-details">
+                <h2>Order Details</h2>
+                <div id="orderDetails">
+                    <!-- Chi tiết đơn hàng sẽ được load từ JavaScript -->
+                </div>
+            </div>
+            
+            <div class="confirmation-actions">
+                <button class="btn-primary" onclick="location.href='/pages/product.html'">
+                    Continue Shopping
+                </button>
+                <button class="btn-secondary" onclick="location.href='/pages/account.html'">
+                    View Order History
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/nav.js"></script>
+    <script src="/js/mock-data.js"></script>
+    <script src="/js/order-confirmation.js" type="module"></script>
+</body>
+</html> 
