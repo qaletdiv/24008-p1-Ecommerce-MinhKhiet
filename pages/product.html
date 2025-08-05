@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Store - product page</title>
+    <title>Online Store - Products</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,15 +12,15 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lato&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/Css/style.css" />
-    <link rel="stylesheet" href="/Css/product.css" />
+    <link rel="stylesheet" href="../Css/style.css" />
+    <link rel="stylesheet" href="../Css/product.css" />
   </head>
   <body>
     <!--navbar-->
     <nav class="navbar bg">
       <ul class="links-container">
-        <li class="link-item"><a href="#" class="link active">Home</a></li>
-        <li class="link-item"><a href="#" class="link">Product</a></li>
+        <li class="link-item"><a href="../pages/index.html" class="link">Home</a></li>
+        <li class="link-item"><a href="../pages/product.html" class="link active">Products</a></li>
         <li class="link-item"><a href="#" class="link">About</a></li>
         <li class="link-item"><a href="#" class="link">Contact</a></li>
       </ul>
@@ -28,165 +28,107 @@
         <div class="search-box">
           <input type="text" class="search" placeholder="search item" />
           <button class="search-btn">
-            <img src="/img/search.png" alt="" />
+            <img src="../img/search.png" alt="" />
           </button>
-        <div class="cart">
-          <img src="/img/cart.png" class="cart-icon" alt="" />
+        </div>
+        <div class="cart" id="cart-icon">
+          <img src="../img/cart.png" class="cart-icon" alt="" />
           <span class="cart-item-count">00</span>
         </div>
         <div class="user">
-          <img src="/img/user.png" class="user-icon" alt="" />
+          <img src="../img/user.png" class="user-icon" alt="" />
+          <div class="user-icon-popup">
+            <p class="popup-text">login to your account</p>
+            <a class="popup-action-btn">login</a>
+          </div>
         </div>
       </div>
     </nav>
 
-    <!--product-detail-->
-    <section class="product-section">
-      <img src="/img/product-image.png" class="product-imgage" alt="" />
-      <div class="product-detail">
-        <h1 class="product-titile">prenium sofa</h1>
-        <p class="product-des">
-          Leather sighs like a lover’s whisper, this throne drinks the light and
-          spits back opulence—each stitch a rebellion against the mundane,
-          though its weight dares your floors to protest.
+    <!-- Product Listing Section -->
+    <div id="product-listing" style="display: none;">
+      <div class="products-container">
+        <div class="filters-section">
+          <div class="category-filter">
+            <select id="categorySelect">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+          <div class="price-filter">
+            <label>Price Range:</label>
+            <input type="range" id="priceRange" min="0" max="50000000" step="1000000" />
+            <span id="priceValue">$0 - $50,000,000</span>
+          </div>
+          <div class="sort-filter">
+            <select id="sortSelect">
+              <option value="name">Sort by Name</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="products-grid" id="productsGrid">
+          <!-- Products will be loaded here -->
+        </div>
+        
+        <div class="pagination" id="pagination">
+          <!-- Pagination will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <div id="product-detail" style="display: none;">
+      <section class="product-section">
+        <img src="../img/product-image.png" class="product-img" alt="" />
+        <div class="product-detail">
+          <h1 class="product-title">Loading...</h1>
+          <p class="product-des">
+            Loading product description...
+          </p>
+          <div class="ratings">
+            <img src="../img/fill star.png" class="star" alt="" />
+            <img src="../img/fill star.png" class="star" alt="" />
+            <img src="../img/fill star.png" class="star" alt="" />
+            <img src="../img/fill star.png" class="star" alt="" />
+            <img src="../img/no fill star.png" class="star" alt="" />
+            <span class="rating-count">0 reviews</span>
+          </div>
+          <p class="price">$0</p>
+          <div class="quantity-selector">
+            <label for="quantity-input">Quantity:</label>
+            <input type="number" id="quantity-input" class="quantity-input" value="1" min="1" max="99">
+          </div>
+          <div class="btn-container">
+            <button class="product-btn buy-btn">Buy Now</button>
+            <button class="product-btn cart-btn">Add to cart</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-des">
+        <h1 class="section-title">details</h1>
+        <p class="des">
+          Loading product details...
         </p>
-        <div class="ratings">
-          <img src="/img/fill star.png" class="star" alt="" />
-          <img src="/img/fill star.png" class="star" alt="" />
-          <img src="/img/fill star.png" class="star" alt="" />
-          <img src="/img/fill star.png" class="star" alt="" />
-          <img src="/img/no fill star.png" class="star" alt="" />
-          <span class="rating-count">4529 reviews</span>
-        </div>
-        <p class="price">$899</p>
-        <div class="btn-container">
-          <button class="product-btn buy-btn">Buy Now</button>
-          <button class="product-btn cart-btn">Add to cart</button>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="detail-des">
-      <h1 class="section-titile">details</h1>
-      <p class="des">
-        This sofa is not merely furniture—it is a statement of indulgence, a
-        sanctuary of engineered opulence. Its frame, carved from solid hardwood,
-        wears Italian leather like a second skin, each crease and fold
-        whispering of artisan hands. The cushions defy physics: goose down
-        marries high-resilience foam in a rebellion against gravity, yet they
-        hold their shape like a proud spine. Sit, and you’ll feel the tension of
-        the day dissolve into its tufted embrace; the backrest arches just so, a
-        sly collaborator to your bad posture. <br />
-        Brass legs gleam with the arrogance of unscratchable polish, though
-        they’ll betray you with a single rogue coaster. The color—somewhere
-        between a storm and a bruise—swallows light and dares you to call it
-        anything but midnight. Yes, it costs more than your first car. No, you
-        won’t regret it until you move apartment
-      </p>
-    </section>
-
-    <!--reviews-->
-    <section class="review-section">
-      <h1 class="section-title">
-        What our <span>customers</span> says about us
-      </h1>
-      <div class="review-container">
-        <div class="review-card">
-          <div class="user-dp" data-rating="4.9">
-            <img src="/img/user 1.png" alt="" />
-          </div>
-          <h2 class="review-title">best quality more than my expectation</h2>
-          <p class="review">
-            This sofa blends luxury and comfort perfectly—ideal for modern
-            living rooms. The fabric feels premium, and the sturdy frame ensures
-            long-lasting use. A bit pricey but worth the investment!
-          </p>
+      <!-- Similar products section -->
+      <section class="best-selling-product-section">
+        <h1 class="section-title">similar products</h1>
+        <div class="product-container">
+          <!-- Similar products will be loaded here -->
         </div>
-        <div class="review-card">
-          <div class="user-dp" data-rating="4.9">
-            <img src="/img/user 2.png " alt="" />
-          </div>
-          <h2 class="review-title">on time delivery with best packaging</h2>
-          <p class="review">
-            Stylish yet functional, this coffee table elevates my space
-            instantly. The smooth finish resists scratches, though assembly
-            instructions could be clearer. Overall, a sleek centerpiece.
-          </p>
-        </div>
-        <div class="review-card">
-          <div class="user-dp" data-rating="4.9">
-            <img src="/img/user 3.png" alt="" />
-          </div>
-          <h2 class="review-title">very helpful customer support</h2>
-          <p class="review">
-            The minimalist bookshelf is a space-saver with clever storage.
-            Lightweight but wobbles slightly on uneven floors. Great for small
-            apartments needing chic organization.
-          </p>
-        </div>
-        <div class="review-card">
-          <div class="user-dp" data-rating="4.9">
-            <img src="/img/user 4.png" alt="" />
-          </div>
-          <h2 class="review-title">very easy to refund/return products</h2>
-          <p class="review">
-            These dining chairs are surprisingly comfortable for long meals. The
-            neutral color fits any décor, though the legs scuff hardwood. Love
-            the mid-century design!
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="add-review-section">
-      <h1 class="section-title">add a review</h1>
-      <input
-        type="text"
-        class="review-headline"
-        placeholder="review headline"
-      />
-      <textarea placeholder="review" class="review-field"></textarea>
-      <p class="rating-text">how much you liked the product</p>
-      <div class="star-container">
-        <img src="/img/no fill star.png " class="rating-star" alt="" />
-        <img src="/img/no fill star.png" class="rating-star" alt="" />
-        <img src="/img/no fill star.png" class="rating-star" alt="" />
-        <img src="/img/no fill star.png" class="rating-star" alt="" />
-        <img src="/img/no fill star.png" class="rating-star" alt="" />
-      </div>
-      <button class="add-review-btn">add review</button>
-    </section>
-
-    <!--Similar  products-->
-    <section class="best-selling-product-section">
-      <h1 class="section-title">similar products</h1>
-      <div class="product-container">
-        <div class="product-card">
-          <img src="/img/product-1.png" class="product-img" alt="" />
-          <p class="product-name">Lights</p>
-        </div>
-
-        <div class="product-card">
-          <img src="/img/product-2.png" class="product-img" alt="" />
-          <p class="product-name">Table</p>
-        </div>
-
-        <div class="product-card">
-          <img src="/img/product-3.png" class="product-img" alt="" />
-          <p class="product-name">Storage</p>
-        </div>
-
-        <div class="product-card">
-          <img src="/img/product-4.png" class="product-img" alt="" />
-          <p class="product-name">Sofa</p>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <footer>made by Minh Khiet</footer>
 
-    <script src="/js/home.js"></script>
-    <script src="/js/product.js"></script>
-    <script src="/js/nav.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/mock-data.js"></script> 
+    <script src="../js/home.js" type="module"></script>
+    <script src="../js/product.js" type="module"></script>
+    <script src="../js/main.js" type="module"></script> 
   </body>
 </html>

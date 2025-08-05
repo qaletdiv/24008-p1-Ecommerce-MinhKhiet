@@ -1,4 +1,3 @@
-
 function renderFeaturedProducts() {
     const products = JSON.parse(localStorage.getItem('products')) || [];
     const featuredProducts = products.filter(p => p.featured);
@@ -31,7 +30,7 @@ function renderCategories() {
         categoriesContainer.innerHTML = categories.map(category => `
             <div class="category-card">
                 <h3>${category.name}</h3>
-                <a href="products.html?category=${category.slug}" class="btn">Xem sản phẩm</a>
+                <a href="product.html?category=${category.slug}" class="btn">Xem sản phẩm</a>
             </div>
         `).join('');
     }
@@ -41,12 +40,15 @@ function renderCategories() {
 function handleAddToCart() {
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('add-to-cart')) {
-            const productId = parseInt(e.target.getAttribute('data-id'));
+            const productId = e.target.getAttribute('data-id');
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             const products = JSON.parse(localStorage.getItem('products')) || [];
             
             const product = products.find(p => p.id === productId);
-            if (!product) return;
+            if (!product) {
+                console.error('Không tìm thấy sản phẩm:', productId);
+                return;
+            }
             
             const existingItem = cart.find(item => item.id === productId);
             
@@ -57,16 +59,37 @@ function handleAddToCart() {
                     id: product.id,
                     name: product.name,
                     price: product.price,
-                    image: product.images[0],
+                    image: product.images && product.images[0] ? product.images[0] : "/img/no-image.png",
                     quantity: 1
                 });
             }
             
             localStorage.setItem('cart', JSON.stringify(cart));
-            alert('Đã thêm sản phẩm vào giỏ hàng!');
+            showNotification('Đã thêm sản phẩm vào giỏ hàng!');
             updateCartCount(); 
         }
     });
+}
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #4CAF50;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 5px;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    `;
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
 }
 
 

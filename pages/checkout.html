@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Online Store</title>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/checkout.css">
+</head>
+<body>
+    <nav class="navbar bg">
+        <ul class="links-container">
+            <li class="link-item"><a href="../pages/index.html" class="link">Home</a></li>
+            <li class="link-item"><a href="../pages/product.html" class="link">Products</a></li>
+            <li class="link-item"><a href="#" class="link">About</a></li>
+            <li class="link-item"><a href="#" class="link">Contact</a></li>
+        </ul>
+        <div class="user-interactions">
+            <div class="search-box">
+                <input type="text" class="search" placeholder="search item" />
+                <button class="search-btn">
+                    <img src="../img/search.png" alt="" />
+                </button>
+            </div>
+            <div class="cart" id="cart-icon">
+                <img src="../img/cart.png" class="cart-icon" alt="" />
+                <span class="cart-item-count">00</span>
+            </div>
+            <div class="user">
+                <img src="../img/user.png" class="user-icon" alt="" />
+                <div class="user-icon-popup">
+                    <p class="popup-text">login to your account</p>
+                    <a class="popup-action-btn">login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <h1>Checkout</h1>
+        </div>
+        
+        <div class="checkout-content">
+            <div class="checkout-form-section">
+                <h2>Shipping Information</h2>
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Shipping Address *</label>
+                        <textarea id="address" name="address" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="note">Notes</label>
+                        <textarea id="note" name="note" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <select id="paymentMethod" name="paymentMethod" onchange="showPaymentDetails()">
+                            <option value="cod">Cash on Delivery (COD)</option>
+                            <option value="bank">Bank Transfer</option>
+                            <option value="card">Credit/Debit Card</option>
+                            <option value="qr">QR Code Payment</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    </div>
+                    
+                    <div id="paymentDetails" class="payment-details" style="display: none;">
+                        <!-- Payment details will be shown here -->
+                    </div>
+                </form>
+            </div>
+            
+            <div class="order-summary-section">
+                <h2>Order Summary</h2>
+                <div id="orderSummary">
+                    <!-- Order summary content will be loaded from JavaScript -->
+                </div>
+                
+                <div class="checkout-actions">
+                    <button class="btn-secondary" onclick="location.href='../pages/cart.html'">
+                        Back to Cart
+                    </button>
+                    <button class="btn-primary" onclick="placeOrder()">
+                        Place Order
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/mock-data.js"></script>
+    <script src="../js/checkout.js"></script>
+</body>
+</html> 
