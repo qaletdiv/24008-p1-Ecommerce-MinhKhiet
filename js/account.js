@@ -30,7 +30,7 @@ const showLoginRequired = () => {
             <div class="login-required">
                 <h2>Login Required</h2>
                 <p>You need to login to view your account information</p>
-                <a href="/pages/login.html" class="login-btn">Login</a>
+                <a href="../pages/login.html" class="login-btn">Login</a>
             </div>
         `;
     }
@@ -116,7 +116,7 @@ const showNoOrders = () => {
             <div class="no-orders">
                 <h3>No Orders Yet</h3>
                 <p>You haven't placed any orders yet. Start shopping to see your order history here.</p>
-                <a href="/pages/product.html" class="shop-now-btn">Start Shopping</a>
+                <a href="../pages/product.html" class="shop-now-btn">Start Shopping</a>
             </div>
         `;
     }
@@ -135,7 +135,7 @@ const getStatusText = (status) => {
 
 window.viewOrderDetails = (orderId) => {
     try {
-        location.href = `/pages/order-confirmation.html?orderId=${orderId}`;
+        location.href = `../pages/order-confirmation.html?orderId=${orderId}`;
     } catch (error) {
         console.error('Error viewing order details:', error);
         showNotification('Error viewing order details', 'error');

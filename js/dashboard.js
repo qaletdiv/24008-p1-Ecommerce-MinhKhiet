@@ -64,11 +64,11 @@ const setupProducts = () => {
 };
 
 window.editProduct = (productId) => {
-    location.href = `/pages/add-product.html?edit=${productId}`;
+    location.href = `../pages/add-product.html?edit=${productId}`;
 };
 
 window.viewProduct = (productId) => {
-    location.href = `/pages/product.html?id=${productId}`;
+    location.href = `../pages/product.html?id=${productId}`;
 };
 
 window.deleteProduct = (productId) => {

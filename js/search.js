@@ -56,7 +56,7 @@ const renderSearchResults = (results, query) => {
             <div class="no-results">
                 <h3>No products found</h3>
                 <p>Try searching with different keywords</p>
-                <a href="/pages/product.html" class="continue-shopping">Browse All Products</a>
+                <a href="../pages/product.html" class="continue-shopping">Browse All Products</a>
             </div>
         `;
         return;
@@ -64,8 +64,8 @@ const renderSearchResults = (results, query) => {
     
     const resultsHTML = results.map(product => `
         <div class="product-card">
-            <img src="${product.images && product.images[0] ? product.images[0] : '/img/no-image.png'}" 
-                 onclick="location.href='/pages/product.html?id=${product.id}'" 
+            <img src="${product.images && product.images[0] ? product.images[0] : '../img/no-image.png'}" 
+                 onclick="location.href='../pages/product-detail.html?id=${product.id}'" 
                  class="product-img" 
                  alt="${product.name}" 
                  onerror="this.src='/img/no-image.png'">
@@ -87,14 +87,14 @@ const setupSearchNavigation = () => {
     if (searchBtn && searchBox) {
         searchBtn.addEventListener('click', () => {
             if (searchBox.value.trim().length > 0) {
-                location.href = `/pages/search.html?q=${encodeURIComponent(searchBox.value.trim())}`;
+                location.href = `../pages/search.html?q=${encodeURIComponent(searchBox.value.trim())}`;
             }
         });
         
         searchBox.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 if (searchBox.value.trim().length > 0) {
-                    location.href = `/pages/search.html?q=${encodeURIComponent(searchBox.value.trim())}`;
+                    location.href = `../pages/search.html?q=${encodeURIComponent(searchBox.value.trim())}`;
                 }
             }
         });
@@ -123,7 +123,7 @@ window.addToCartFromSearch = (productId) => {
                     id: product.id,
                     name: product.name,
                     price: product.price,
-                    image: product.images && product.images[0] ? product.images[0] : "/img/no-image.png",
+                    image: product.images && product.images[0] ? product.images[0] : "../img/no-image.png",
                     quantity: 1
                 });
             }
@@ -175,7 +175,7 @@ const showNoResults = (message) => {
         searchResults.innerHTML = `
             <div class="no-results">
                 <h3>${message}</h3>
-                <a href="/pages/product.html" class="continue-shopping">Browse All Products</a>
+                <a href="../pages/product.html" class="continue-shopping">Browse All Products</a>
             </div>
         `;
     }

@@ -63,7 +63,7 @@ const showLoginRequired = () => {
             <div class="empty-cart">
                 <h2>Login Required</h2>
                 <p>You need to login to view your cart</p>
-                <a href="/pages/login.html" class="continue-shopping">Login</a>
+                <a href="../pages/login.html" class="continue-shopping">Login</a>
             </div>
         `;
     }
@@ -154,7 +154,7 @@ const renderCart = (cart) => {
                 <span>$${total.toLocaleString()}</span>
             </div>
             <div class="cart-actions">
-                <button class="cart-btn cart-btn-secondary" onclick="location.href='/pages/product.html'">
+                <button class="cart-btn cart-btn-secondary" onclick="location.href='../pages/product.html'">
                     Continue Shopping
                 </button>
                 <button class="cart-btn cart-btn-primary" onclick="proceedToCheckout()">
@@ -240,9 +240,9 @@ window.proceedToCheckout = () => {
         
         console.log('Proceeding to checkout...');
         console.log('Current location:', window.location.href);
-        console.log('Navigating to:', '/pages/checkout.html');
+        console.log('Navigating to:', '../pages/checkout.html');
         
-        location.href = '/pages/checkout.html';
+        location.href = '../pages/checkout.html';
         
     } catch (error) {
         console.error('Error proceeding to checkout:', error);

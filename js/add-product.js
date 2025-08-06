@@ -3,9 +3,9 @@ let user = JSON.parse(sessionStorage.getItem('user') || null);
 
 window.onload = () => {
     if (user == null) {
-        location.replace('/pages/login.html'); 
+        location.replace('../pages/login.html'); 
     } else if (!user.seller) {
-        location.replace('/pages/dashboard.html');
+        location.replace('../pages/dashboard.html');
     }
     
     if (productId) {
@@ -123,7 +123,7 @@ const saveProduct = (data) => {
         
         showNotification('Product saved successfully!');
         setTimeout(() => {
-            location.href = '/pages/dashboard.html';
+            location.href = '../pages/dashboard.html';
         }, 1500);
         
     } catch (error) {
