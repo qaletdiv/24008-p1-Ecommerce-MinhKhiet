@@ -36,7 +36,7 @@ const showLoginRequired = () => {
             <div class="empty-cart">
                 <h2>Login Required</h2>
                 <p>You need to login to checkout</p>
-                <a href="/pages/login.html" class="continue-shopping">Login</a>
+                <a href="../pages/login.html" class="continue-shopping">Login</a>
             </div>
         `;
     }
@@ -49,7 +49,7 @@ const showEmptyCart = () => {
             <div class="empty-cart">
                 <h2>Empty Cart</h2>
                 <p>You don't have any products in your cart</p>
-                <a href="/pages/product.html" class="continue-shopping">Continue Shopping</a>
+                <a href="../pages/product.html" class="continue-shopping">Continue Shopping</a>
             </div>
         `;
     }
@@ -169,7 +169,7 @@ window.placeOrder = () => {
         
         localStorage.setItem('cart', JSON.stringify([]));
         
-        location.href = `/pages/order-confirmation.html?orderId=${order.orderId}`;
+        location.href = `../pages/order-confirmation.html?orderId=${order.orderId}`;
         
     } catch (error) {
         console.error('Error placing order:', error);

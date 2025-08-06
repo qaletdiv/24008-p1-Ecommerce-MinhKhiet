@@ -59,7 +59,7 @@ export const createCards = (data) => {
     if (item.id != currentProductId) {
       cards += `
                 <div class="product-card">
-                    <img src="${item.images[0]}" onclick="location.href = '/pages/product.html?id=${item.id}'" class="product-img" alt="${item.name}">
+                    <img src="${item.images[0]}" onclick="location.href = '../pages/product.html?id=${item.id}'" class="product-img" alt="${item.name}">
                     <p class="product-name">${item.name} →</p>
                 </div>
                 `;
