@@ -16,32 +16,42 @@
   </head>
   <body>
     <!--navbar-->
-    <nav class="navbar">
-      <ul class="links-container">
-        <li class="link-item"><a href="#" class="link active">Home</a></li>
-        <li class="link-item"><a href="../pages/product.html" class="link">Products</a></li>
-        <li class="link-item"><a href="#" class="link">About</a></li>
-        <li class="link-item"><a href="#" class="link">Contact</a></li>
-      </ul>
-      <div class="user-interactions">
-        <div class="search-box">
-          <input type="text" class="search" placeholder="search item" />
-          <button class="search-btn">
-            <img src="../img/search.png" alt="" />
-          </button>
+    <nav class="navbar bg">
+        <ul class="links-container">
+            <li class="link-item"><a href="#" class="link active">Home</a></li>
+            <li class="link-item"><a href="../pages/product.html" class="link">Product</a></li>
+            <li class="link-item"><a href="#" class="link">About</a></li>
+            <li class="link-item"><a href="#" class="link">Contact</a></li>
+        </ul>
+        <div class="user-interactions">
+            <div class="search-box">
+                <input type="text" class="search" placeholder="search item" />
+                <button class="search-btn">
+                    <img src="../img/search.png" alt="" />
+                </button>
+            </div>
+            <div class="cart">
+                <img src="../img/cart.png" class="cart-icon" alt="" />
+                <span class="cart-item-count">00</span>
+            </div>
+            <div class="user">
+                <img src="../img/user.png" class="user-icon" alt="" />
+            </div>
         </div>
-        <div class="cart">
-          <img src="../img/cart.png" class="cart-icon" alt="" />
-          <span class="cart-item-count">00</span>
+        <div class="user-icon-popup">
+            <div class="user-popup-content">
+                <div class="user-info">
+                    <img src="../img/user.png" alt="" class="user-popup-img">
+                    <span class="user-name">Guest User</span>
+                </div>
+                <div class="user-actions">
+                    <a href="../pages/login.html" class="login-btn">Login</a>
+                    <a href="../pages/account.html" class="account-btn" style="display: none;">Account</a>
+                    <a href="../pages/dashboard.html" class="dashboard-btn" style="display: none;">Dashboard</a>
+                    <button class="logout-btn" style="display: none;">Logout</button>
+                </div>
+            </div>
         </div>
-        <div class="user">
-          <img src="../img/user.png" class="user-icon" alt="" />
-          <div class="user-icon-popup">
-            <p>Login to your account</p>
-            <a href="../pages/login.html">login</a>
-          </div>
-        </div>
-      </div>
     </nav>
 
     <!-- Header-->

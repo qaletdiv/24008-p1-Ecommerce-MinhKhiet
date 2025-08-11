@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             testButton.onclick = window.testCheckoutButton;
             document.body.appendChild(testButton);
-        }, 2000);
+        }, 200000);
         
     } catch (error) {
         console.error('Error initializing cart page:', error);
@@ -79,7 +79,7 @@ const loadCart = () => {
         }
         
         renderCart(cart);
-        updateCartCount();
+        updateCartCountInCart();
         
     } catch (error) {
         console.error('Error loading cart:', error);
@@ -119,7 +119,7 @@ const renderCart = (cart) => {
     
     const cartItemsHTML = cart.map(item => `
         <div class="cart-item" data-product-id="${item.id}">
-            <img src="${item.image}" alt="${item.name}" class="cart-item-image" onerror="this.src='/img/no-image.png'">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-image" onerror="this.src='../img/no-image.png'">
             <div class="cart-item-details">
                 <div class="cart-item-name">${item.name}</div>
                 <div class="cart-item-price">$${item.price.toLocaleString()}</div>
@@ -220,7 +220,7 @@ window.removeFromCart = (productId) => {
         
         showNotification('Product removed from cart');
         loadCart();
-        updateCartCount();
+        updateCartCountInCart();
     } catch (error) {
         console.error('Error removing product:', error);
     }
@@ -250,7 +250,7 @@ window.proceedToCheckout = () => {
     }
 };
 
-const updateCartCount = () => {
+const updateCartCountInCart = () => {
     const cartCount = document.querySelector('.cart-item-count');
     if (cartCount) {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];

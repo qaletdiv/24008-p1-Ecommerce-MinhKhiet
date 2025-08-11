@@ -415,36 +415,75 @@ footer{
 
 .user-icon-popup{
     position: absolute;
-    top: 200%;
-    padding: 20px;
-    background: #fff;
-    font-family: 'lato', sans-serif;
-    width: 180px;
+    top: 100%;
     right: 0;
-    border-radius: 5px;
-    text-align: center;
-    border: 1px solid #190c05;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 20px;
+    min-width: 200px;
     display: none;
+    z-index: 1000;
 }
 
-.user-icon-popup.active{
+.user-icon-popup.show{
     display: block;
 }
 
-.user-icon-popup p{
-    font-size: 1.2rem;
-    text-transform: capitalize;
-    line-height: 2rem;
+.user-popup-content{
+    text-align: center;
 }
 
-.user-icon-popup a{
+.user-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.user-popup-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-name{
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.user-actions{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.login-btn, .account-btn, .dashboard-btn, .logout-btn{
     display: block;
-    margin: 20px auto 0;
+    padding: 8px 16px;
     text-decoration: none;
     color: #fff;
     background: #d5be8b;
-    padding: 10px;
-    width: 100px;
-    text-transform: capitalize;
-    border-radius: 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-btn:hover, .account-btn:hover, .dashboard-btn:hover, .logout-btn:hover{
+    background: #c4a97a;
+}
+
+.logout-btn{
+    background: #dc3545;
+}
+
+.logout-btn:hover{
+    background: #c82333;
 }

@@ -59,7 +59,9 @@ export const createCards = (data) => {
     if (item.id != currentProductId) {
       cards += `
                 <div class="product-card">
-                    <img src="${item.images[0]}" onclick="location.href = '../pages/product.html?id=${item.id}'" class="product-img" alt="${item.name}">
+
+                    <img src="${item.images[0]}" onclick="location.href = '../pages/product-detail.html?id=${item.id}'" class="product-img" alt="${item.name}">
+
                     <p class="product-name">${item.name} →</p>
                 </div>
                 `;
@@ -69,11 +71,23 @@ export const createCards = (data) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  getProducts("sofa").then((data) =>
-    createProductCards(
-      data,
-      "Sản phẩm bán chạy nhất",
-      ".best-selling-product-section"
-    )
-  );
+  getProducts().then((data) => {
+    const featuredProducts = data.filter(product => product.featured === true);
+    if (featuredProducts.length > 0) {
+      createProductCards(
+        featuredProducts,
+        "Featured Products",
+        ".best-selling-product-section"
+      );
+    } else {
+      const sofaProducts = data.filter(product => 
+        product.tags && product.tags.includes('sofa')
+      );
+      createProductCards(
+        sofaProducts,
+        "Best Selling Products",
+        ".best-selling-product-section"
+      );
+    }
+  });
 });

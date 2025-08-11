@@ -9,8 +9,8 @@ const initProductElements = () => {
 };
 
 const checkProductLoginStatus = () => {
-  const user = JSON.parse(sessionStorage.getItem("user") || "null");
-  return user !== null;
+  const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
+  return currentUser !== null;
 };
 
 const showProductLoginRequired = () => {
@@ -238,10 +238,10 @@ const setupProductButtons = (product) => {
 const addProductToCart = (product, quantity) => {
   try {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingItem = cart.find((item) => item.id === product.id);
+    const existingItemIndex = cart.findIndex((item) => item.id === product.id);
 
-    if (existingItem) {
-      existingItem.quantity += quantity;
+    if (existingItemIndex !== -1) {
+      cart[existingItemIndex].quantity = quantity;
     } else {
       cart.push({
         id: product.id,
@@ -259,6 +259,7 @@ const addProductToCart = (product, quantity) => {
     updateProductCartCount();
   } catch (error) {
     console.error("Error adding to cart:", error);
+    showProductError("Failed to add product to cart");
   }
 };
 
@@ -267,7 +268,7 @@ const updateProductCartCount = () => {
   if (cartCount) {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems > 0 ? totalItems : "00";
+    cartCount.textContent = totalItems > 0 ? totalItems.toString().padStart(2, '0') : "00";
   }
 };
 

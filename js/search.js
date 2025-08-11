@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         loadSearchResults();
-        setupSearchNavigation();
+        setupSearchPageNavigation();
         
     } catch (error) {
         console.error('Error initializing search page:', error);
@@ -68,7 +68,7 @@ const renderSearchResults = (results, query) => {
                  onclick="location.href='../pages/product-detail.html?id=${product.id}'" 
                  class="product-img" 
                  alt="${product.name}" 
-                 onerror="this.src='/img/no-image.png'">
+                 onerror="this.src='../img/no-image.png'">
             <p class="product-name">${product.name}</p>
             <p class="product-price">$${product.price.toLocaleString()}</p>
             <button onclick="addToCartFromSearch('${product.id}')" class="add-to-cart-btn">
@@ -80,7 +80,7 @@ const renderSearchResults = (results, query) => {
     searchResults.innerHTML = resultsHTML;
 };
 
-const setupSearchNavigation = () => {
+const setupSearchPageNavigation = () => {
     const searchBtn = document.querySelector('.search-btn');
     const searchBox = document.querySelector('.search');
     
@@ -129,7 +129,7 @@ window.addToCartFromSearch = (productId) => {
             }
             
             localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
+            updateSearchCartCount();
             showNotification('Product added to cart!');
         }
     } catch (error) {
@@ -137,7 +137,7 @@ window.addToCartFromSearch = (productId) => {
     }
 };
 
-const updateCartCount = () => {
+const updateSearchCartCount = () => {
     const cartCount = document.querySelector('.cart-item-count');
     if (cartCount) {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];

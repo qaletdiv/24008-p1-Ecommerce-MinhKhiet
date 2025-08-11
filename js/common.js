@@ -23,6 +23,9 @@ const processData = (data) => {
     loader.style.display = null; 
     if (data.alert) {
         showFormError(data.alert);
+        if (data.alert.includes('thành công')) {
+            return;
+        }
     } else if (data.user) { 
         sessionStorage.setItem('user', JSON.stringify(data.user));  
         localStorage.setItem('currentUser', JSON.stringify(data.user)); 
@@ -96,11 +99,12 @@ const processSignup = (data) => {
     console.log('Creating new user:', newUser);
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
-    localStorage.setItem('currentUser', JSON.stringify(newUser));
-    sessionStorage.setItem('user', JSON.stringify(newUser));
-
-    console.log('User created successfully, redirecting...');
-    processData({ user: newUser }); 
+    showFormError('Đăng ký thành công! Vui lòng đăng nhập.');
+    setTimeout(() => {
+        location.replace('../pages/login.html');
+    }, 1500);
+    
+    console.log('User created successfully, redirecting to login...'); 
 };
 
 

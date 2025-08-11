@@ -412,33 +412,26 @@ const mockPosts = [
   },
 ];
 
-function initializeData() {
-  if (!localStorage.getItem("users")) {
-    localStorage.setItem("users", JSON.stringify(mockUsers));
-  }
-  if (!localStorage.getItem("categories")) {
-    localStorage.setItem("categories", JSON.stringify(mockCategories));
-  }
-  if (!localStorage.getItem("products")) {
-    localStorage.setItem("products", JSON.stringify(mockProducts));
-  }
-  if (!localStorage.getItem("posts")) {
-    localStorage.setItem("posts", JSON.stringify(mockPosts));
-  }
-  if (!localStorage.getItem("currentUser")) {
-    localStorage.setItem("currentUser", JSON.stringify(null));
-  }
-  if (!localStorage.getItem("cart")) {
-    localStorage.setItem("cart", JSON.stringify([]));
-  }
-};
-
-
 window.initializeData = () => {
     console.log("Initializing mock data...");
-    localStorage.setItem("products", JSON.stringify(mockProducts));
-    localStorage.setItem("categories", JSON.stringify(mockCategories));
-    localStorage.setItem("users", JSON.stringify(mockUsers));
+    if (!localStorage.getItem("users")) {
+        localStorage.setItem("users", JSON.stringify(mockUsers));
+    }
+    if (!localStorage.getItem("categories")) {
+        localStorage.setItem("categories", JSON.stringify(mockCategories));
+    }
+    if (!localStorage.getItem("products")) {
+        localStorage.setItem("products", JSON.stringify(mockProducts));
+    }
+    if (!localStorage.getItem("posts")) {
+        localStorage.setItem("posts", JSON.stringify(mockPosts));
+    }
+    if (!localStorage.getItem("currentUser")) {
+        localStorage.setItem("currentUser", JSON.stringify(null));
+    }
+    if (!localStorage.getItem("cart")) {
+        localStorage.setItem("cart", JSON.stringify([]));
+    }
     
     console.log("Mock data initialized successfully");
     console.log("Products:", mockProducts.length);
