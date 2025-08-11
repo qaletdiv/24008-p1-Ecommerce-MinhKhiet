@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         loadSearchResults();
-        setupSearchNavigation();
+        setupSearchPageNavigation();
         
     } catch (error) {
         console.error('Error initializing search page:', error);
@@ -56,7 +56,7 @@ const renderSearchResults = (results, query) => {
             <div class="no-results">
                 <h3>No products found</h3>
                 <p>Try searching with different keywords</p>
-                <a href="/pages/product.html" class="continue-shopping">Browse All Products</a>
+                <a href="../pages/product.html" class="continue-shopping">Browse All Products</a>
             </div>
         `;
         return;
@@ -64,11 +64,11 @@ const renderSearchResults = (results, query) => {
     
     const resultsHTML = results.map(product => `
         <div class="product-card">
-            <img src="${product.images && product.images[0] ? product.images[0] : '/img/no-image.png'}" 
-                 onclick="location.href='/pages/product.html?id=${product.id}'" 
+            <img src="${product.images && product.images[0] ? product.images[0] : '../img/no-image.png'}" 
+                 onclick="location.href='../pages/product-detail.html?id=${product.id}'" 
                  class="product-img" 
                  alt="${product.name}" 
-                 onerror="this.src='/img/no-image.png'">
+                 onerror="this.src='../img/no-image.png'">
             <p class="product-name">${product.name}</p>
             <p class="product-price">$${product.price.toLocaleString()}</p>
             <button onclick="addToCartFromSearch('${product.id}')" class="add-to-cart-btn">
@@ -80,21 +80,21 @@ const renderSearchResults = (results, query) => {
     searchResults.innerHTML = resultsHTML;
 };
 
-const setupSearchNavigation = () => {
+const setupSearchPageNavigation = () => {
     const searchBtn = document.querySelector('.search-btn');
     const searchBox = document.querySelector('.search');
     
     if (searchBtn && searchBox) {
         searchBtn.addEventListener('click', () => {
             if (searchBox.value.trim().length > 0) {
-                location.href = `/pages/search.html?q=${encodeURIComponent(searchBox.value.trim())}`;
+                location.href = `../pages/search.html?q=${encodeURIComponent(searchBox.value.trim())}`;
             }
         });
         
         searchBox.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 if (searchBox.value.trim().length > 0) {
-                    location.href = `/pages/search.html?q=${encodeURIComponent(searchBox.value.trim())}`;
+                    location.href = `../pages/search.html?q=${encodeURIComponent(searchBox.value.trim())}`;
                 }
             }
         });
@@ -123,13 +123,13 @@ window.addToCartFromSearch = (productId) => {
                     id: product.id,
                     name: product.name,
                     price: product.price,
-                    image: product.images && product.images[0] ? product.images[0] : "/img/no-image.png",
+                    image: product.images && product.images[0] ? product.images[0] : "../img/no-image.png",
                     quantity: 1
                 });
             }
             
             localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
+            updateSearchCartCount();
             showNotification('Product added to cart!');
         }
     } catch (error) {
@@ -137,7 +137,7 @@ window.addToCartFromSearch = (productId) => {
     }
 };
 
-const updateCartCount = () => {
+const updateSearchCartCount = () => {
     const cartCount = document.querySelector('.cart-item-count');
     if (cartCount) {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -175,7 +175,7 @@ const showNoResults = (message) => {
         searchResults.innerHTML = `
             <div class="no-results">
                 <h3>${message}</h3>
-                <a href="/pages/product.html" class="continue-shopping">Browse All Products</a>
+                <a href="../pages/product.html" class="continue-shopping">Browse All Products</a>
             </div>
         `;
     }

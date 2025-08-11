@@ -59,7 +59,7 @@ function handleAddToCart() {
                     id: product.id,
                     name: product.name,
                     price: product.price,
-                    image: product.images && product.images[0] ? product.images[0] : "/img/no-image.png",
+                    image: product.images && product.images[0] ? product.images[0] : "../img/no-image.png",
                     quantity: 1
                 });
             }

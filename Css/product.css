@@ -1,4 +1,3 @@
-/* Product Listing Styles */
 .products-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -92,6 +91,9 @@
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
   border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .product-card:hover {
@@ -105,6 +107,9 @@
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 10px;
+  display: block;
+  position: relative;
+  z-index: 0;
 }
 
 .product-name {
@@ -112,6 +117,13 @@
   font-weight: bold;
   color: #333;
   margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+  background: white;
+  padding: 5px 0;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .product-price {
@@ -119,6 +131,7 @@
   color: #d5be8b;
   font-weight: bold;
   margin-bottom: 10px;
+  flex-grow: 1;
 }
 
 .add-to-cart-btn {
@@ -168,7 +181,6 @@
   font-size: 18px;
 }
 
-/* Existing Product Detail Styles */
 .product-section {
   display: flex;
   justify-content: center;
@@ -294,7 +306,6 @@
   margin-top: 2rem;
 }
 
-/* What's Included Section */
 .whats-included-section {
   padding: 50px 5vw;
   background: #f8f9fa;
@@ -334,7 +345,6 @@
   font-size: 16px;
 }
 
-/* Key Features Section */
 .key-features-section {
   padding: 50px 5vw;
   background: white;
@@ -375,7 +385,6 @@
   line-height: 1.4;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .product-section {
     flex-direction: column;
@@ -408,7 +417,6 @@
   }
 }
 
-/* Responsive Design for new sections */
 @media (max-width: 768px) {
   .included-items,
   .features-list {
@@ -426,7 +434,6 @@
   }
 }
 
-/* Product Detail Page Styles */
 .product-images {
   display: flex;
   flex-direction: column;
@@ -524,7 +531,6 @@
   border-color: #d5be8b;
 }
 
-/* Responsive Design for Product Detail */
 @media (max-width: 768px) {
   .product-section {
     flex-direction: column;

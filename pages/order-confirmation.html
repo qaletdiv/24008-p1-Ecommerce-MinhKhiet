@@ -1,45 +1,78 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xác nhận đơn hàng - Online Store</title>
-    <link rel="stylesheet" href="/Css/style.css">
-    <link rel="stylesheet" href="/Css/order-confirmation.css">
+    <title>Order Confirmation - Online Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="../Css/order-confirmation.css">
 </head>
 <body>
-    <nav class="navbar">
-        <!-- Navigation sẽ được load từ nav.js -->
-    </nav>
-
-    <div class="confirmation-container">
-        <div class="confirmation-header">
-            <div class="success-icon">✓</div>
-            <h1>Order Placed Successfully!</h1>
-            <p>Thank you for shopping at Online Store</p>
+    <!--navbar-->
+    <nav class="navbar bg">
+        <ul class="links-container">
+            <li class="link-item"><a href="../pages/index.html" class="link">Home</a></li>
+            <li class="link-item"><a href="../pages/product.html" class="link">Product</a></li>
+            <li class="link-item"><a href="#" class="link">About</a></li>
+            <li class="link-item"><a href="#" class="link">Contact</a></li>
+        </ul>
+        <div class="user-interactions">
+            <div class="cart">
+                <img src="../img/cart.png" class="cart-icon" alt="" />
+                <span class="cart-item-count">00</span>
+            </div>
+            <div class="user">
+                <img src="../img/user.png" class="user-icon" alt="" />
+            </div>
         </div>
-        
-        <div class="confirmation-content">
-            <div class="order-details">
-                <h2>Order Details</h2>
-                <div id="orderDetails">
-                    <!-- Chi tiết đơn hàng sẽ được load từ JavaScript -->
+        <div class="user-icon-popup">
+            <div class="user-popup-content">
+                <div class="user-info">
+                    <img src="../img/user.png" alt="" class="user-popup-img">
+                    <span class="user-name">Guest User</span>
+                </div>
+                <div class="user-actions">
+                    <a href="../pages/login.html" class="login-btn">Login</a>
+                    <a href="../pages/account.html" class="account-btn" style="display: none;">Account</a>
+                    <a href="../pages/dashboard.html" class="dashboard-btn" style="display: none;">Dashboard</a>
+                    <button class="logout-btn" style="display: none;">Logout</button>
                 </div>
             </div>
+        </div>
+    </nav>
+
+    <div class="order-confirmation-container">
+        <div class="confirmation-card">
+            <div class="success-icon">
+                <img src="../img/check.png" alt="Success">
+            </div>
+            <h1 class="confirmation-title">Order Confirmed!</h1>
+            <p class="confirmation-message">Thank you for your purchase. Your order has been successfully placed.</p>
             
-            <div class="confirmation-actions">
-                <button class="btn-primary" onclick="location.href='/pages/product.html'">
-                    Continue Shopping
-                </button>
-                <button class="btn-secondary" onclick="location.href='/pages/account.html'">
-                    View Order History
-                </button>
+            <div class="order-details">
+                <h2>Order Details</h2>
+                <div class="order-info">
+                    <p><strong>Order ID:</strong> <span id="order-id">#12345</span></p>
+                    <p><strong>Order Date:</strong> <span id="order-date">January 1, 2024</span></p>
+                    <p><strong>Total Amount:</strong> <span id="order-total">$299.99</span></p>
+                    <p><strong>Shipping Address:</strong> <span id="shipping-address">123 Main St, City, State 12345</span></p>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="../pages/index.html" class="btn primary-btn">Continue Shopping</a>
+                <a href="../pages/account.html" class="btn secondary-btn">View Orders</a>
             </div>
         </div>
     </div>
 
-    <script src="/js/nav.js"></script>
-    <script src="/js/mock-data.js"></script>
-    <script src="/js/order-confirmation.js" type="module"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/mock-data.js"></script>
+    <script src="../js/order-confirmation.js" type="module"></script>
 </body>
 </html> 

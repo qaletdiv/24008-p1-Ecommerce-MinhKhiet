@@ -26,16 +26,16 @@ const createProduct = (product) => {
     productCard.className = 'product-card';
     productCard.innerHTML = `
         <button class="btn edit-btn" onclick="editProduct('${product.id}')">
-            <img src="/img/edit.png" alt="Edit">
+            <img src="../img/edit.png" alt="Edit">
         </button>
         <button class="btn open-btn" onclick="viewProduct('${product.id}')">
-            <img src="/img/open.png" alt="View">
+            <img src="../img/open.png" alt="View">
         </button>
         <button class="btn delete-btn" onclick="deleteProduct('${product.id}')">
-            <img src="/img/delete.png" alt="Delete">
+            <img src="../img/delete.png" alt="Delete">
         </button>
-        <img src="${product.images && product.images[0] ? product.images[0] : '/img/no-image.png'}" 
-             class="product-img" alt="${product.name}" onerror="this.src='/img/no-image.png'">
+        <img src="${product.images && product.images[0] ? product.images[0] : '../img/no-image.png'}" 
+class="product-img" alt="${product.name}" onerror="this.src='../img/no-image.png'">
         <p class="product-name">${product.name} →</p>
         <p class="product-price">$${product.price.toLocaleString()}</p>
     `;
@@ -64,11 +64,11 @@ const setupProducts = () => {
 };
 
 window.editProduct = (productId) => {
-    location.href = `/pages/add-product.html?edit=${productId}`;
+    location.href = `../pages/add-product.html?edit=${productId}`;
 };
 
 window.viewProduct = (productId) => {
-    location.href = `/pages/product.html?id=${productId}`;
+    location.href = `../pages/product.html?id=${productId}`;
 };
 
 window.deleteProduct = (productId) => {
