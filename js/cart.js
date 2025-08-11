@@ -96,7 +96,7 @@ const showEmptyCart = () => {
             <div class="empty-cart">
                 <h2>Empty Cart</h2>
                 <p>You don't have any products in your cart</p>
-                <a href="/pages/product.html" class="continue-shopping">Continue Shopping</a>
+                <a href="../pages/product.html" class="continue-shopping">Continue Shopping</a>
             </div>
         `;
     }
