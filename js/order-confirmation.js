@@ -29,7 +29,7 @@ const showLoginRequired = () => {
             <div class="error-message">
                 <h2>Login Required</h2>
                 <p>You need to login to view order information</p>
-                <a href="/pages/login.html" class="btn-primary">Login</a>
+                <a href="../pages/login.html" class="btn-primary">Login</a>
             </div>
         `;
     }
@@ -197,7 +197,7 @@ const showError = (message) => {
             <div class="error-message">
                 <h2>Error</h2>
                 <p>${message}</p>
-                <button onclick="location.href='/pages/index.html'" class="btn-primary">
+                <button onclick="location.href='../pages/index.html'" class="btn-primary">
                     Back to Home
                 </button>
             </div>
